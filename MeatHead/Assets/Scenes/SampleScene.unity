@@ -121,6 +121,36 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &16298600 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7681320335748270479, guid: 6e7b98c057c2866468805d3981a77f63,
+    type: 3}
+  m_PrefabInstance: {fileID: 1386411338393714466}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &16298604
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 16298600}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a8695521f0d02e499659fee002a26c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Padding:
+    m_Left: 0
+    m_Right: 0
+    m_Top: 0
+    m_Bottom: 0
+  m_ChildAlignment: 4
+  m_StartCorner: 0
+  m_StartAxis: 0
+  m_CellSize: {x: 50, y: 77}
+  m_Spacing: {x: -50, y: 0}
+  m_Constraint: 0
+  m_ConstraintCount: 2
 --- !u!1 &206376813
 GameObject:
   m_ObjectHideFlags: 0
@@ -134,7 +164,7 @@ GameObject:
   - component: {fileID: 206376815}
   - component: {fileID: 206376814}
   m_Layer: 5
-  m_Name: Canvas
+  m_Name: Main Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -213,9 +243,9 @@ RectTransform:
   m_Children:
   - {fileID: 2982120167519926495}
   - {fileID: 2080594215192109332}
-  - {fileID: 9200159623900492672}
-  - {fileID: 8157631728255623197}
   - {fileID: 2135357821}
+  - {fileID: 8157631728255623197}
+  - {fileID: 9200159623900492672}
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -495,7 +525,7 @@ RectTransform:
   m_Children:
   - {fileID: 404887326}
   m_Father: {fileID: 206376817}
-  m_RootOrder: 4
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -1044,7 +1074,7 @@ PrefabInstance:
     - target: {fileID: 7697229836628186626, guid: c44279567c9a750429316439d14b74b8,
         type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 7697229836628186626, guid: c44279567c9a750429316439d14b74b8,
         type: 3}

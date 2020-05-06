@@ -5,20 +5,29 @@ using UnityEngine.EventSystems;
 
 public class DragHandler : MonoBehaviour, IDragHandler, IEndDragHandler, IBeginDragHandler 
 {
+    public GameObject Canvas;
     Vector3 startpos;
     private bool isOverDropZone = false;
     private GameObject dropZone;
+    private GameObject startParent; 
 
+    private void Awake()
+    {
+        // Search scene for object called Main Canvas
+        Canvas = GameObject.Find("Main Canvas");
+    }
 
     public void OnBeginDrag(PointerEventData eventData)
     {
         startpos = transform.position;
+        startParent = transform.parent.gameObject;
     }
 
     public void OnDrag(PointerEventData eventData)
     {
         Vector3 newpos = Input.mousePosition;
         transform.position = newpos;
+        transform.SetParent(Canvas.transform, true);
     }
 
     public void OnEndDrag(PointerEventData eventData)
@@ -30,6 +39,7 @@ public class DragHandler : MonoBehaviour, IDragHandler, IEndDragHandler, IBeginD
         else
         {
             transform.position = startpos;
+            transform.SetParent(startParent.transform);
         }
     }
 
