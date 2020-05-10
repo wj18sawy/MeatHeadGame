@@ -40,14 +40,16 @@ public class PlayerManager : NetworkBehaviour
         }
     }
 
-    //Might need this in the future
-    //void DealCards()
-    //{
-    //    if (hasAuthority)
-    //    {
-    //        CmdDealCards();
-    //    }
-    //}
+    public void PlayCard(GameObject card)
+    {
+        CmdPlayCard(card);
+    }
+
+    [Command]
+    void CmdPlayCard(GameObject card)
+    {
+        RpcShowCard(card, "Played");
+    }
 
     [ClientRpc]
     void RpcShowCard(GameObject card, string type)
@@ -63,5 +65,10 @@ public class PlayerManager : NetworkBehaviour
                 card.transform.SetParent(EnemyArea.transform, false);
             }
         }
+        else if (type == "Played")
+        {
+            card.transform.SetParent(DropZone.transform, false);
+        }
     }
+
 }
