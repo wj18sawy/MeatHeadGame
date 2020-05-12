@@ -18,6 +18,7 @@ GameObject:
   - component: {fileID: -7156145545318130219}
   - component: {fileID: 6155079316570371410}
   - component: {fileID: 8896221343769391415}
+  - component: {fileID: -6220167901250056887}
   m_Layer: 8
   m_Name: Card1
   m_TagString: Untagged
@@ -92,7 +93,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 594ad3aeebf8ed941967900c978ae62c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  syncMode: 0
+  syncInterval: 0.1
   Canvas: {fileID: 0}
+  DropZone: {fileID: 0}
+  PlayerManager: {fileID: 0}
 --- !u!61 &6334347715547224636
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -245,3 +250,17 @@ MonoBehaviour:
   localPositionSensitivity: 0.01
   localRotationSensitivity: 0.01
   localScaleSensitivity: 0.01
+--- !u!114 &-6220167901250056887
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4879491987547929715}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65a5067131d1f6d4db3946cce23fabff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CardFront: {fileID: 21300000, guid: cb7397212258bd740a7dec284faf9804, type: 3}
+  CardBack: {fileID: 21300000, guid: 7ccba65b958018c49b0658d92a8c49a1, type: 3}
