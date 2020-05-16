@@ -16,6 +16,9 @@ public class PlayerManager : NetworkBehaviour
     [SyncVar]
     int cardsPlayed = 0;
 
+    [SyncVar]
+    int cardsInHand = 0;
+
     public override void OnStartClient()
     {
         base.OnStartClient();
@@ -33,21 +36,28 @@ public class PlayerManager : NetworkBehaviour
     }
 
     [Command]
-    public void CmdDealCards()
+    public void CmdDealStartingCards()
     {
         for (var i = 0; i < 5; i++)
         {
             GameObject card = Instantiate(cards[Random.Range(0, cards.Count)], new Vector2(0, 0), Quaternion.identity);
-            NetworkServer.Spawn(card, connectionToClient);
+            NetworkServer.Spawn(card);
             RpcShowCard(card, "Dealt");
         }
+    }
+
+    [Command]
+    public void CmdDealCard()
+    {
+        GameObject card = Instantiate(cards[Random.Range(0, cards.Count)], new Vector2(0, 0), Quaternion.identity);
+        NetworkServer.Spawn(card, connectionToClient);
+        RpcShowCard(card, "Dealt");
     }
 
     public void PlayCard(GameObject card)
     {
         CmdPlayCard(card);
         cardsPlayed++;
-        Debug.Log(cardsPlayed);
     }
 
     [Command]
@@ -65,6 +75,8 @@ public class PlayerManager : NetworkBehaviour
             {
                 card.transform.SetParent(PlayerArea.transform, false);
                 card.GetComponent<CardFlipper>().Flip();
+                cardsInHand = PlayerArea.transform.childCount;
+                Debug.Log($"Player has {cardsInHand} card(s).");
             }
             else
             {
@@ -74,11 +86,13 @@ public class PlayerManager : NetworkBehaviour
         else if (type == "Played")
         {
             card.transform.SetParent(DropZone.transform, false);
+            cardsInHand = PlayerArea.transform.childCount;
+            Debug.Log($"Player has {cardsInHand} card(s).");
+
             if (!hasAuthority)
             {
                 card.GetComponent<CardFlipper>().Flip();
             }
         }
     }
-
 }

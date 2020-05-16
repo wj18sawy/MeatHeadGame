@@ -570,6 +570,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 448382e17c06a964e9e32a717d170eae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  output: 
+  stack: 
 --- !u!4 &2085073992
 Transform:
   m_ObjectHideFlags: 0
@@ -1008,6 +1010,12 @@ PrefabInstance:
       propertyPath: EnemyArea
       value: 
       objectReference: {fileID: 1831761182}
+    - target: {fileID: 9013631954380980408, guid: dc33f0fc5f2c59440b2c66ffe2463c43,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 7ccba65b958018c49b0658d92a8c49a1,
+        type: 3}
     - target: {fileID: 9013631954380980410, guid: dc33f0fc5f2c59440b2c66ffe2463c43,
         type: 3}
       propertyPath: m_LocalPosition.x

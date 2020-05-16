@@ -31,7 +31,6 @@ public class DragHandler : NetworkBehaviour, IDragHandler, IEndDragHandler, IBeg
     public void OnBeginDrag(PointerEventData eventData)
     {
         if (!isDraggable) return;
-        
         startpos = transform.position;
         startParent = transform.parent.gameObject;
     }
