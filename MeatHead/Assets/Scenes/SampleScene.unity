@@ -199,7 +199,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 800, y: 600}
@@ -570,8 +570,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 448382e17c06a964e9e32a717d170eae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  output: 
-  stack: 
 --- !u!4 &2085073992
 Transform:
   m_ObjectHideFlags: 0
@@ -1014,7 +1012,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 7ccba65b958018c49b0658d92a8c49a1,
+      objectReference: {fileID: 21300000, guid: 29df605f708e6354d8b9bea70919f5d1,
         type: 3}
     - target: {fileID: 9013631954380980410, guid: dc33f0fc5f2c59440b2c66ffe2463c43,
         type: 3}
