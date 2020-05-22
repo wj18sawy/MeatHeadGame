@@ -9,7 +9,7 @@ using UnityEngine.SceneManagement;
 public class NetworkManagerLobby : NetworkManager
 {
     [SerializeField] private int minPlayers = 2;
-    [Scene] [SerializeField] private string menuScene = string.Empty;
+    [Scene] [SerializeField] private string menuScene = String.Empty;
 
     [Header("Maps")]
     [SerializeField] private int numberOfRounds = 1;
@@ -67,7 +67,9 @@ public class NetworkManagerLobby : NetworkManager
             return;
         }
 
-        if (SceneManager.GetActiveScene().name != menuScene)
+        var a = SceneManager.GetActiveScene();
+
+        if (SceneManager.GetActiveScene().path != menuScene)
         {
             conn.Disconnect();
             return;
@@ -76,7 +78,7 @@ public class NetworkManagerLobby : NetworkManager
 
     public override void OnServerAddPlayer(NetworkConnection conn)
     {
-        if (SceneManager.GetActiveScene().name == menuScene)
+        if (SceneManager.GetActiveScene().path == menuScene)
         {
             bool isLeader = RoomPlayers.Count == 0;
 
@@ -132,7 +134,7 @@ public class NetworkManagerLobby : NetworkManager
 
     public void StartGame()
     {
-        if (SceneManager.GetActiveScene().name == menuScene)
+        if (SceneManager.GetActiveScene().path == menuScene)
         {
             if (!IsReadyToStart()) { return; }
 
@@ -145,7 +147,7 @@ public class NetworkManagerLobby : NetworkManager
     public override void ServerChangeScene(string newSceneName)
     {
         // From menu to game
-        if (SceneManager.GetActiveScene().name == menuScene && newSceneName.StartsWith("Scene_Map"))
+        if (SceneManager.GetActiveScene().path == menuScene && newSceneName.StartsWith("Scene_Map"))
         {
             for (int i = RoomPlayers.Count - 1; i >= 0; i--)
             {
