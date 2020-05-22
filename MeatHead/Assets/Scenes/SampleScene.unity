@@ -346,7 +346,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 913274302}
-  - component: {fileID: 913274301}
   - component: {fileID: 913274300}
   - component: {fileID: 913274299}
   m_Layer: 0
@@ -365,12 +364,35 @@ MonoBehaviour:
   m_GameObject: {fileID: 913274298}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6442dc8070ceb41f094e44de0bf87274, type: 3}
+  m_Script: {fileID: 11500000, guid: 30eade6ccd532e540a647fb4350c41c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  showGUI: 1
-  offsetX: 0
-  offsetY: -30
+  dontDestroyOnLoad: 1
+  runInBackground: 1
+  startOnHeadless: 1
+  showDebugMessages: 0
+  serverTickRate: 30
+  offlineScene: 
+  onlineScene: 
+  transport: {fileID: 913274300}
+  networkAddress: localhost
+  maxConnections: 4
+  disconnectInactiveConnections: 0
+  disconnectInactiveTimeout: 60
+  authenticator: {fileID: 0}
+  playerPrefab: {fileID: 4525234736264960917, guid: 8fa9f3ab5d197bd43977e8646d36d6ab,
+    type: 3}
+  autoCreatePlayer: 1
+  playerSpawnMethod: 0
+  spawnPrefabs: []
+  minPlayers: 2
+  menuScene: 
+  numberOfRounds: 1
+  mapSet: {fileID: 0}
+  roomPlayerPrefab: {fileID: 0}
+  gamePlayerPrefab: {fileID: 0}
+  playerSpawnSystem: {fileID: 0}
+  roundSystem: {fileID: 0}
 --- !u!114 &913274300
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -413,42 +435,6 @@ MonoBehaviour:
   serverMaxReceivesPerTick: 10000
   clientMaxMessageSize: 16384
   clientMaxReceivesPerTick: 1000
---- !u!114 &913274301
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 913274298}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8aab4c8111b7c411b9b92cf3dbc5bd4e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dontDestroyOnLoad: 1
-  runInBackground: 1
-  startOnHeadless: 1
-  showDebugMessages: 0
-  serverTickRate: 30
-  offlineScene: 
-  onlineScene: 
-  transport: {fileID: 913274300}
-  networkAddress: localhost
-  maxConnections: 4
-  disconnectInactiveConnections: 0
-  disconnectInactiveTimeout: 60
-  authenticator: {fileID: 0}
-  playerPrefab: {fileID: 8718554112799401786, guid: 4b59ea01aed11ef4090d418dc171902c,
-    type: 3}
-  autoCreatePlayer: 1
-  playerSpawnMethod: 0
-  spawnPrefabs:
-  - {fileID: 4879491987547929715, guid: 207932cf91edfba45afabdfc1ffe96e2, type: 3}
-  - {fileID: 7250585247736536579, guid: a77bf120059995e41ac2448e5eed9da7, type: 3}
-  - {fileID: 7681320335748270479, guid: 6e7b98c057c2866468805d3981a77f63, type: 3}
-  - {fileID: 3109729041918906173, guid: 71258a0f53cfef34d9a9144945710c72, type: 3}
-  - {fileID: 1128645708749308347, guid: c44279567c9a750429316439d14b74b8, type: 3}
-  - {fileID: 9013631954380980411, guid: dc33f0fc5f2c59440b2c66ffe2463c43, type: 3}
 --- !u!4 &913274302
 Transform:
   m_ObjectHideFlags: 0
