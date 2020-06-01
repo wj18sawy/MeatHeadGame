@@ -52,7 +52,7 @@ public class NetworkRoomPlayerLobby : NetworkBehaviour
         UpdateDisplay();
     }
 
-    public override void OnNetworkDestroy()
+    public override void OnStopClient()
     {
         Room.RoomPlayers.Remove(this);
 

@@ -67,8 +67,6 @@ public class NetworkManagerLobby : NetworkManager
             return;
         }
 
-        var a = SceneManager.GetActiveScene();
-
         if (SceneManager.GetActiveScene().path != menuScene)
         {
             conn.Disconnect();
